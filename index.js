@@ -2,11 +2,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     
-    fetch('http://localhost:5000/getAll')
+    fetch('https://interviewportfoliobackend.herokuapp.com/getAll')
     .then(response => response.json())
     .then(data => loadDropdownList(data['data']));
 
-    fetch('http://localhost:5000/getAllInterviews')
+    fetch('https://interviewportfoliobackend.herokuapp.com/getAllInterviews')
     .then(response => response.json())
     .then(data => loadInterviewTable(data['data']));
     
