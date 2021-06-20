@@ -68,7 +68,7 @@ document.querySelector('table tbody').addEventListener('click', function(event) 
 });
 
 function deleteInterviewById(id) {
-    fetch('http://localhost:5000/deleteInterview/' + id, {
+    fetch('https://interviewportfoliobackend.herokuapp.com//deleteInterview/' + id, {
         method: 'DELETE'
     })
     .then(response => response.json())
@@ -98,7 +98,7 @@ updateBtn.onclick = function() {
         return;
     }
 
-    fetch('http://localhost:5000/updateInterview', {
+    fetch('https://interviewportfoliobackend.herokuapp.com//updateInterview', {
         method: 'PATCH',
         headers: {
             'Content-type' : 'application/json'
@@ -147,7 +147,7 @@ submitButton.onclick = function () {
         alert("Select Date and Time");
         return;
     }
-    fetch('http://localhost:5000/insertInterview', {
+    fetch('https://interviewportfoliobackend.herokuapp.com/insertInterview', {
         headers: {
             'Content-type': 'application/json'
         },
