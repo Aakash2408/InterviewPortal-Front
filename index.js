@@ -46,11 +46,19 @@ function loadInterviewTable(data) {
         tableHtml += `<td>${email1}</td>`;
         tableHtml += `<td>${email2}</td>`;
         tableHtml += `<td>${new Date(startTime).toLocaleString()}</td>`;
+        // tableHtml += `<td>${new Date(startTime).toLocaleString()}</td>`;
         tableHtml += `<td>${new Date(endTime).toLocaleString()}</td>`;
         const dataToStore = `${id},${email1},${email2}`;
         tableHtml += `<td><button class="delete-row-btn" data-id=${id}>Delete</td>`;
         tableHtml += `<td><button class="edit-row-btn" data-id=${dataToStore}>Edit</td>`;
         tableHtml += "</tr>";
+        // if(new Date(startTime)>Date.now()){
+           
+        // }
+        // else{
+        //     alert("Start time can not be less than current time");
+        // }
+        
     });
 
     table.innerHTML = tableHtml;
@@ -68,7 +76,7 @@ document.querySelector('table tbody').addEventListener('click', function(event) 
 });
 
 function deleteInterviewById(id) {
-    fetch('https://interviewportfoliobackend.herokuapp.com//deleteInterview/' + id, {
+    fetch('https://interviewportfoliobackend.herokuapp.com/deleteInterview/' + id, {
         method: 'DELETE'
     })
     .then(response => response.json())
@@ -98,7 +106,7 @@ updateBtn.onclick = function() {
         return;
     }
 
-    fetch('https://interviewportfoliobackend.herokuapp.com//updateInterview', {
+    fetch('https://interviewportfoliobackend.herokuapp.com/updateInterview', {
         method: 'PATCH',
         headers: {
             'Content-type' : 'application/json'
