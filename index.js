@@ -76,7 +76,7 @@ document.querySelector('table tbody').addEventListener('click', function(event) 
 });
 
 function deleteInterviewById(id) {
-    fetch('https://interviewportfoliobackend.herokuapp.com/deleteInterview' + id, {
+    fetch('https://interviewportfoliobackend.herokuapp.com/deleteInterview/' + id, {
         method: 'DELETE'
     })
     .then(response => response.json())
